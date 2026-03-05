@@ -1,90 +1,355 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>EMA Journal</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>EMA Laboratory – Exponential Meta-Architecture</title>
-
-<meta name="description" content="EMA Laboratory – research initiative exploring OntoPsy philosophy, AI architectures, and the emergence of structure from the vacuum continuum.">
-
-<meta name="keywords" content="
-EMA Laboratory,
-OntoPsy,
-Exponential Meta Architecture,
-Artificial Intelligence architecture,
-AI research,
-symbolic AI,
-Telegram AI automation,
-cognitive architecture,
-AI operator systems,
-philosophy of consciousness,
-Dirac equation philosophy,
-vacuum continuum,
-emergence of life,
-computational ontology,
-AI research laboratory
-">
-
-<meta name="author" content="EMA Laboratory">
-
-<meta name="robots" content="index, follow">
-<meta name="googlebot" content="index, follow">
-<meta name="bingbot" content="index, follow">
-
-<link rel="canonical" href="https://emalaboratory.com/">
-<meta property="og:title" content="EMA Laboratory">
-<meta property="og:description" content="Research initiative exploring OntoPsy philosophy and AI architectures.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://emalaboratory.com">
-<meta property="og:image" content="https://emalaboratory.com/OntoPsy.png">
-    
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="EMA Laboratory">
-<meta name="twitter:description" content="OntoPsy – philosophical layer of artificial intelligence architectures.">
-<meta name="twitter:image" content="https://emalaboratory.com/OntoPsy.png">
-    
-<meta name="theme-color" content="#000000"> 
-    
-<meta name="msvalidate.01" content="6A1A65C352E5FC5E0E7D22E60631C0C0" />  
-<meta name="google-site-verification" content="-CyQMfF5rWjrGPyrTGhCK_tLKy7yIQqcM-QbcySxi5w" />
-    
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EMA Journal — OntoPsy</title>
   
-<style>
-body { font-family: sans-serif; background:#0e0e10; color:#ddd; padding:80px; max-width:800px; margin:auto; }
-h1 { margin-bottom:40px; }
-.entry { margin-bottom:60px; }
-.date { color:#888; font-size:14px; }
-a { color:white; }
-</style>
- <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "Organization",
- "name": "EMA Laboratory",
- "url": "https://emalaboratory.com",
- "logo": "https://emalaboratory.com/OntoPsy.png",
- "description": "EMA Laboratory explores OntoPsy philosophy, AI architectures and emergence of structure from vacuum continuum."
-}
-</script> 
+
+    
+  <style>
+    :root{
+      --bg: #070a12;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.04);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.12);
+      --glow: rgba(110,200,255,.18);
+      --maxw: 1120px;
+      --radius: 22px;
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 50% 0%, rgba(90,140,255,.16), transparent 55%),
+                  radial-gradient(900px 500px at 15% 20%, rgba(0,255,210,.10), transparent 52%),
+                  var(--bg);
+      color: var(--text);
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(7,10,18,.65);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .brand-dot{
+      width:10px; height:10px; border-radius:50%;
+      background: rgba(110,200,255,.9);
+      box-shadow: 0 0 18px var(--glow);
+    }
+    .nav{
+      display:flex; gap:14px; flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .nav a{
+      padding: 6px 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+    }
+    .nav a:hover{
+      border-color: var(--line);
+      background: rgba(255,255,255,.04);
+      text-decoration: none;
+    }
+
+    .wrap{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 28px 18px 80px;
+    }
+
+    .page-title{
+      margin: 16px 0 8px;
+      font-size: 28px;
+      letter-spacing: .02em;
+    }
+    .page-sub{
+      margin: 0 0 22px;
+      color: var(--muted);
+      line-height: 1.45;
+      max-width: 70ch;
+    }
+
+    /* ===== БЛОК ЖУРНАЛА ===== */
+    .entry{
+      position: relative;
+      background: linear-gradient(180deg, var(--panel), var(--panel2));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 18px;
+      overflow: hidden;
+    }
+    .entry::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(600px 220px at 20% 0%, rgba(110,200,255,.16), transparent 55%),
+                  radial-gradient(420px 260px at 85% 10%, rgba(120,255,220,.10), transparent 55%);
+      pointer-events:none;
+      opacity:.65;
+    }
+
+    .grid{
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .col{
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px 14px;
+      background: rgba(0,0,0,.18);
+      min-height: 180px;
+    }
+
+    .col h3{
+      margin: 0 0 10px;
+      font-size: 14px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.85);
+    }
+
+    .col p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    /* Средняя колонка под изображение */
+    .media{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 0;
+      background: rgba(0,0,0,.10);
+      border-style: dashed;
+    }
+    .media .ph{
+      padding: 16px;
+      text-align:center;
+      color: rgba(255,255,255,.55);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .media img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+    }
+
+    /* ===== ГРАФИЧЕСКИЙ РАЗДЕЛИТЕЛЬ МЕЖДУ БЛОКАМИ ===== */
+    .divider{
+      height: 44px;
+      margin: 18px 0;
+      position: relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .divider::before{
+      content:"";
+      position:absolute;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(110,200,255,.35), rgba(255,255,255,.12), rgba(120,255,220,.25), transparent);
+    }
+    .divider .sig{
+      position: relative;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(7,10,18,.55);
+      color: rgba(255,255,255,.70);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      box-shadow: 0 0 24px rgba(110,200,255,.12);
+    }
+
+    /* ===== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНА ===== */
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      .col{ min-height: auto; }
+      .media{ min-height: 220px; }
+    }
+  </style>
 </head>
 
-  
 <body>
 
-<h1>EMA Journal</h1>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>EMA Laboratory — Journal</span>
+      </div>
 
-<div class="entry">
-<div class="date">March 2026</div>
-<p>
-EMA Laboratory launched.
-OntoPsy framework publicly introduced.
-</p>
-</div>
+      <nav class="nav">
+        <a href="index.html">← Title</a>
+        <a href="operator.html">Operator Layer</a>
+        <!-- сюда позже можно добавить ссылку на страницу продукта -->
+        <!-- <a href="ema_test_lab.html">EMA_TEST_LAB</a> -->
+      </nav>
+    </div>
+  </header>
 
-<p><a href="index.html">← Back to OntoPsy</a></p>
+  <main class="wrap">
+    <h1 class="page-title">EMA Journal</h1>
+    <p class="page-sub">
+      <!-- Русский комментарий:
+           Это короткое введение на страницу журнала.
+           Здесь можно описать, что журнал обновляется, формат записей, цели, дисциплины, стиль. -->
+      <!-- TODO: вставить текст вступления -->
+      Draft structure. Five entries. Each entry: left text + center image + right text.
+    </p>
 
+    <!-- ===================== ENTRY 01 ===================== -->
+    <section class="entry">
+      <div class="grid">
+        <div class="col">
+          <h3><!-- TODO: Заголовок слева (тема / статья) --></h3>
+          <p>
+            <!-- TODO: Текст слева.
+                 Можно: аннотация, постановка проблемы, короткое резюме. -->
+          </p>
+        </div>
+
+        <div class="col media">
+          <!-- Вариант А: пока без картинки -->
+          <div class="ph">
+            <!-- TODO: Сюда вставить <img src="assets/..." alt=""> -->
+            Место под изображение (центральная колонка)
+          </div>
+
+          <!-- Вариант Б: когда будет картинка, раскомментируй и убери ph
+          <img src="assets/IMAGE1.png" alt="EMA Journal image 1">
+          -->
+        </div>
+
+        <div class="col">
+          <h3><!-- TODO: Заголовок справа (второй аспект темы) --></h3>
+          <p>
+            <!-- TODO: Текст справа.
+                 Можно: вывод, последствия, список гипотез, ссылки. -->
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"><div class="sig">Entry II</div></div>
+
+    <!-- ===================== ENTRY 02 ===================== -->
+    <section class="entry">
+      <div class="grid">
+        <div class="col">
+          <h3><!-- TODO: Заголовок слева --></h3>
+          <p><!-- TODO: Текст слева --></p>
+        </div>
+        <div class="col media">
+          <div class="ph"><!-- TODO: картинка --></div>
+          <!-- <img src="assets/IMAGE2.png" alt="EMA Journal image 2"> -->
+        </div>
+        <div class="col">
+          <h3><!-- TODO: Заголовок справа --></h3>
+          <p><!-- TODO: Текст справа --></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"><div class="sig">Entry III</div></div>
+
+    <!-- ===================== ENTRY 03 ===================== -->
+    <section class="entry">
+      <div class="grid">
+        <div class="col">
+          <h3><!-- TODO: Заголовок слева --></h3>
+          <p><!-- TODO: Текст слева --></p>
+        </div>
+        <div class="col media">
+          <div class="ph"><!-- TODO: картинка --></div>
+          <!-- <img src="assets/IMAGE3.png" alt="EMA Journal image 3"> -->
+        </div>
+        <div class="col">
+          <h3><!-- TODO: Заголовок справа --></h3>
+          <p><!-- TODO: Текст справа --></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"><div class="sig">Entry IV</div></div>
+
+    <!-- ===================== ENTRY 04 ===================== -->
+    <section class="entry">
+      <div class="grid">
+        <div class="col">
+          <h3><!-- TODO: Заголовок слева --></h3>
+          <p><!-- TODO: Текст слева --></p>
+        </div>
+        <div class="col media">
+          <div class="ph"><!-- TODO: картинка --></div>
+          <!-- <img src="assets/IMAGE4.png" alt="EMA Journal image 4"> -->
+        </div>
+        <div class="col">
+          <h3><!-- TODO: Заголовок справа --></h3>
+          <p><!-- TODO: Текст справа --></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"><div class="sig">Entry V</div></div>
+
+    <!-- ===================== ENTRY 05 ===================== -->
+    <section class="entry">
+      <div class="grid">
+        <div class="col">
+          <h3><!-- TODO: Заголовок слева --></h3>
+          <p><!-- TODO: Текст слева --></p>
+        </div>
+        <div class="col media">
+          <div class="ph"><!-- TODO: картинка --></div>
+          <!-- <img src="assets/IMAGE5.png" alt="EMA Journal image 5"> -->
+        </div>
+        <div class="col">
+          <h3><!-- TODO: Заголовок справа --></h3>
+          <p><!-- TODO: Текст справа --></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
 </body>
 </html>
